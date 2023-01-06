@@ -36,6 +36,7 @@ public class HttpUtil {
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(uri)
                 .POST(HttpRequest.BodyPublishers.ofString(requestBody))
+                .header("Content-type", "application/json")
                 .build();
         final HttpResponse<String> response = CLIENT.send(request, HttpResponse.BodyHandlers.ofString());
         System.out.println("response.statusCode() = " + response.statusCode());
@@ -50,6 +51,7 @@ public class HttpUtil {
         final HttpRequest request = HttpRequest.newBuilder()
                 .uri(uri)
                 .method("DELETE", HttpRequest.BodyPublishers.ofString(requestBody))
+                .header("Content-type", "application/json")
                 .build();
         CLIENT.send(request,HttpResponse.BodyHandlers.ofString());
     }

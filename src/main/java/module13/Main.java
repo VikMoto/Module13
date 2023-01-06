@@ -25,6 +25,7 @@ public class Main {
 //        for (User u : user1) {
 //            System.out.println("TASK #2  " + u);
 
+
         //TASK #3 1.create user, 2.get users List, 3. remove user, 4.get users List and verify that user has removed
         final User user3 = HttpUtil.sendPost(URI.create(GET_USER_BY_ID), defaultUser);
         System.out.println("************************************");
