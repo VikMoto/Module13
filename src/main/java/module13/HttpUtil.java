@@ -35,8 +35,8 @@ public class HttpUtil {
         final String requestBody = GSON.toJson(user);
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(uri)
-                .POST(HttpRequest.BodyPublishers.ofString(requestBody))
                 .header("Content-type", "application/json")
+                .POST(HttpRequest.BodyPublishers.ofString(requestBody))
                 .build();
         final HttpResponse<String> response = CLIENT.send(request, HttpResponse.BodyHandlers.ofString());
         System.out.println("response.statusCode() = " + response.statusCode());
