@@ -1,4 +1,4 @@
-package module13;
+package homework.task1;
 
 import java.util.StringJoiner;
 
@@ -51,15 +51,15 @@ public class User {
 
     @Override
     public String toString() {
-        return new StringJoiner(", ", User.class.getSimpleName() + "[", "]")
-                .add("id=" + id)
-                .add("name='" + name + "'")
-                .add("username='" + username + "'")
-                .add("email='" + email + "'")
-                .add("address=" + address)
-                .add("phone='" + phone + "'")
-                .add("website='" + website + "'")
-                .add("company=" + company)
+        return new StringJoiner(", ", "[", "]")
+                .add("\nid=" + id)
+                .add("\nname='" + name + "'")
+                .add("\nusername='" + username + "'")
+                .add("\nemail='" + email + "'")
+                .add("\naddress=" + address)
+                .add("\nphone='" + phone + "'")
+                .add("\nwebsite='" + website + "'")
+                .add("\ncompany=" + company)
                 .toString();
     }
 }
@@ -92,13 +92,14 @@ class Address {
 
     @Override
     public String toString() {
-        return new StringJoiner(", ", Address.class.getSimpleName() + "[", "]")
-                .add("street='" + street + "'")
-                .add("suite='" + suite + "'")
-                .add("city='" + city + "'")
-                .add("zipcode='" + zipcode + "'")
-                .add("geo=" + geo)
-                .toString();
+        final StringBuilder sb = new StringBuilder("Address{");
+        sb.append("\nstreet='").append(street).append('\'');
+        sb.append(", \nsuite='").append(suite).append('\'');
+        sb.append(", \ncity='").append(city).append('\'');
+        sb.append(", \nzipcode='").append(zipcode).append('\'');
+        sb.append(", \ngeo=").append(geo);
+        sb.append('}');
+        return sb.toString();
     }
 }
 class Geo {
@@ -115,7 +116,7 @@ class Geo {
 
     @Override
     public String toString() {
-        return new StringJoiner(", ", Geo.class.getSimpleName() + "[", "]")
+        return new StringJoiner(", ",  "[", "]")
                 .add("lat='" + lat + "'")
                 .add("lng='" + lng + "'")
                 .toString();
@@ -143,10 +144,10 @@ class Company {
 
     @Override
     public String toString() {
-        return new StringJoiner(", ", Company.class.getSimpleName() + "[", "]")
-                .add("name='" + name + "'")
-                .add("catchPhrase='" + catchPhrase + "'")
-                .add("bs='" + bs + "'")
+        return new StringJoiner(", ",  "[", "]")
+                .add("\nname='" + name + "'")
+                .add("\ncatchPhrase='" + catchPhrase + "'")
+                .add("\nbs='" + bs + "'\n")
                 .toString();
     }
 }

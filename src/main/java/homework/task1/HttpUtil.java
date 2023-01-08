@@ -1,4 +1,4 @@
-package module13;
+package homework.task1;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -35,8 +35,8 @@ public class HttpUtil {
         final String requestBody = GSON.toJson(user);
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(uri)
-                .header("Content-type", "application/json")
                 .POST(HttpRequest.BodyPublishers.ofString(requestBody))
+                .header("Content-type", "application/json")
                 .build();
         final HttpResponse<String> response = CLIENT.send(request, HttpResponse.BodyHandlers.ofString());
         System.out.println("response.statusCode() = " + response.statusCode());
@@ -50,8 +50,8 @@ public class HttpUtil {
         final String requestBody = GSON.toJson(user);
         final HttpRequest request = HttpRequest.newBuilder()
                 .uri(uri)
-                .method("DELETE", HttpRequest.BodyPublishers.ofString(requestBody))
                 .header("Content-type", "application/json")
+                .method("DELETE", HttpRequest.BodyPublishers.ofString(requestBody))
                 .build();
         CLIENT.send(request,HttpResponse.BodyHandlers.ofString());
     }
